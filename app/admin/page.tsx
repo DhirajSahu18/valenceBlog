@@ -1,15 +1,16 @@
-import { redirect } from 'next/navigation';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
-import { AdminDashboard } from '@/components/admin/admin-dashboard';
-import { AdminHeader } from '@/components/admin/admin-header';
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { AdminDashboard } from "@/components/admin/admin-dashboard";
+import { AdminHeader } from "@/components/admin/admin-header";
+import { useEffect, useState } from "react";
 
 export default async function AdminPage() {
-  const session = await getServerSession(authOptions);
-  
-  if (!session) {
-    redirect('/auth/signin');
-  }
+  // const session = await getServerSession(authOptions);
+
+  // if (!session) {
+  //   redirect('/auth/signin');
+  // }
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -1,6 +1,6 @@
-import { prisma } from '@/lib/prisma';
-import { NextRequest, NextResponse } from 'next/server';
-import { handleError } from '@/lib/api-utils';
+import { prisma } from "@/lib/prisma";
+import { NextRequest, NextResponse } from "next/server";
+import { handleError } from "@/lib/api-utils";
 
 export async function GET() {
   try {
@@ -14,6 +14,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    console.log("Received POST request to /api/users", body);
     const user = await prisma.user.create({ data: body });
     return NextResponse.json(user, { status: 201 });
   } catch (error) {

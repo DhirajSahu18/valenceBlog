@@ -27,6 +27,20 @@ export function SignInForm() {
       if (!result?.ok) {
         console.warn("Google sign-in did not complete as expected.");
       }
+      // const response = await fetch("/api/users", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     result,
+      //   }),
+      // });
+      // const res = await response.json();
+      // if (!response.ok) {
+      //   throw new Error(res.message || "Failed to create user");
+      // }
+      // localStorage.setItem("userId", JSON.stringify(res.id));
     } catch (error) {
       console.error("Google sign-in failed:", error);
     } finally {
