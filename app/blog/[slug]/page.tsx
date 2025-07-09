@@ -13,7 +13,7 @@ interface BlogPostPageProps {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const post = await getBlogPost(params.slug);
-  
+  console.log('post', post);
   if (!post) {
     return {
       title: 'Post Not Found',

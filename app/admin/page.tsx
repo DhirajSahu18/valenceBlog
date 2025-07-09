@@ -6,11 +6,11 @@ import { AdminHeader } from "@/components/admin/admin-header";
 import { useEffect, useState } from "react";
 
 export default async function AdminPage() {
-  // const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
 
-  // if (!session) {
-  //   redirect('/auth/signin');
-  // }
+  if (!session) {
+    redirect('/auth/signin');
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
